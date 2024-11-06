@@ -1,16 +1,33 @@
 ---
-
+const title = "Hola mundo tittle astro";
+const my_name = "Gerardo B Zenteno M";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{my_name}</h1>
+
+    <p>Momento Actual: {new Date().toLocaleTimeString()}</p>
+    <p id="current-real-time">Momento actual Real:</p>
+
+    <footer>Año: 2023</footer>
+    <script>
+      const footer = document.querySelector("footer") as HTMLElement;
+      footer.textContent = `Año: ${new Date().getFullYear()}`;
+
+      const actual_real_moment = new Date().toLocaleTimeString();
+
+      const current_time_p = document.querySelector(
+        "#current-real-time"
+      ) as HTMLParagraphElement;
+      current_time_p.innerText = `Momento actual Real: ${actual_real_moment}`;
+    </script>
+  </body>
 </html>
