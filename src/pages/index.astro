@@ -11,11 +11,7 @@ const my_name = "Gerardo B Zenteno M";
   <p>Momento Actual: {new Date().toLocaleTimeString()}</p>
   <p id="current-real-time">Momento actual Real:</p>
 
-  <footer>Año: 2023</footer>
   <script>
-    const footer = document.querySelector("footer") as HTMLElement;
-    footer.textContent = `Año: ${new Date().getFullYear()}`;
-
     const actual_real_moment = new Date().toLocaleTimeString();
 
     const current_time_p = document.querySelector(
